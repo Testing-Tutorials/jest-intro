@@ -11,18 +11,6 @@ can be intimidating. It shouldn't be! This video guides you through all the basi
 - Master JavaScript: https://acad.link/js
 - Master ES6: https://acad.link/es6
 
-NOTE: The repo of this tutorial has 6 remote branches:
-
-- origin/HEAD -> origin/master
-- origin/async-code
-- origin/e2e-test
-- origin/integration-test
-- origin/master
-- origin/starting-setup
-- origin/unit-tests
-
-In order to follow the second part [JavaScript Testing - Mocking Async Code](https://www.youtube.com/watch?v=4Fl5GH4eYZ8&list=RDCMUCSJbGtTlrDami-tDGPUV9-w&index=2) you need to `git checkout async-code`
-
 ## 1. Benefits of automate testing:
 
 - Get an error if you break code.
@@ -61,3 +49,7 @@ In order to follow the second part [JavaScript Testing - Mocking Async Code](htt
 
 - Unit Tests:
   We may write multiple Unit - Tests, for one and the same thing. And we may check for more than just one thing. And also check for false, true, or opposites.
+
+NOTE: The repo of this tutorial has 6 remote branches:
+
+In order to follow the second part [JavaScript Testing - Mocking Async Code](https://www.youtube.com/watch?v=4Fl5GH4eYZ8&list=RDCMUCSJbGtTlrDami-tDGPUV9-w&index=2) you need to `git checkout async-code`

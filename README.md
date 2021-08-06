@@ -61,3 +61,149 @@ In order to follow the second part [JavaScript Testing - Mocking Async Code](htt
 
 - Unit Tests:
   We may write multiple Unit - Tests, for one and the same thing. And we may check for more than just one thing. And also check for false, true, or opposites.
+
+//////////////////////////////////////////////////////////////
+
+## In this project we have notes and examples from 3 tutorials.
+
+### [Jest Crash Course - Unit Testing in JavaScript](https://www.youtube.com/watch?v=7r4xVDI2vho) by Traversy Media
+
+- First run `npm init -y` to get a `package.json`. Note: with the `-y` flag we skip the defaults.
+- Then `npm i -D jest` to install jest locally as a dev dependency. Or install it globally.
+- Change `"test": "echo \"Error: no test specified\" && exit 1"` to just `"test": "jest"` in package.json
+- `.toBe` is for premitive types. To test objects use `.toEqual` or `.toStrictEqual`.
+- script options:
+
+```js
+  "scripts": {
+    "test": "jest  --verbose", // "test": "jest --coverage"
+    "testwatch": "jest --watchAll"
+  },
+```
+
+Note: From the following tutorial, we don't have any code in the files, but only the following notes.
+
+### [Testing JavaScript with Jest](https://egghead.io/lessons/javascript-test-javascript-with-jest) by Kent C. Dodds
+
+2. Test JavaScript with Jest.
+
+Convencions to follow for test files:
+
+- `fileName.test.js`
+- `fileName.spec.js`
+- Put all your test files in a folder with underscores, like `__folderName__`
+- You can run your tests even with `npm t`
+- Jest can simulate a browser enviroment. In order to avoid getting the `window` object, when running tests (because of the extra weight), we can configure the test enviroment for Jest in `package.json`. Just set the following:
+  ```js
+    "jest": {
+      testEnvironment: "node"
+    }
+  ```
+
+4. Track project code coverage with Jest.
+
+- Specify the scripts in package.json to `"test": "jest --coverage"`. Then when we run `npm t`, we see a coverage report on the console. Plus we get a coverage folder in our project. There is an `index.js` file, which we can open, also through the cli by typing: `open coverage/Icov-report/index.html`. Or just got to file and open with right-click => `lite-server`. There you get a better overview...
+- To add all the functions and files (you want to cover in your tests) automatically. Go to package.json and specify the glob `"src/*.js"`:
+
+```js
+"jest": {
+  "collectCoverageFrom": [
+    "src/*.js"
+    ]
+}
+```
+
+Notes: 1. The test files are excluded! 2. Add the coverage folder in your `.gitignore` file.
+
+- We can configure jest with a coverage threshold. This means that if our code coverage ever passes below, that percentage, our testscript is going to fail. In this way, we encourage everybody to add tests as they add code. To do that add the threshold in the jest configuration. Note: the numbers below is the percentage.
+
+```js
+"jest": {
+  "coverageThreshold": {
+    "global": {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
+  }
+}
+```
+
+- Use Jest's interactive Watch Mode.
+- Add in package.json, scripts the `--watch` flag like so: `"test": "jest --watch"`.
+- To see just the last commit, add also the `--lastCommit` flag like so: `"test": "jest --watch --lastCommit"`
+- You may specify a unique command like so:
+  - `"test:watch": "jest --watch"` or
+  - `"test:watchall": "jest --watchAll"`.
+- To run tests only for a specified file. Press `p` and the name of the file.
+
+6. Use Jest's SnapShot Testing Feature
+7. Use Test Driven Development
+
+From the following tutorial we only followed the 1st video
+
+### [React-native jest tutorial](https://www.youtube.com/watch?v=pz2k6azJghk&list=PL8p2I9GklV46mGMh5X1pzuDWidnRrlHyp)
+
+- If npm test does not run, put in `package.json`
+
+```js
+"scripts": {
+
+   "test": "jest"
+ },
+"jest": {
+   "preset": "react-native"
+ },
+```
+
+- then install jest globally with `npm install -g jest`
+- And for some reason I had to also `yarn add react-test-renderer`
+
+1. Snapshot testing
+
+- To update the snapshot run `jest --updateSnapshot` or `npm test -- -u`.
+
+In the React Native app we just use the snap shot:
+
+```js
+// App.js
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={{ marginLeft: 10, fontSize: 25 }}>Profile</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
+// __tests__/App.js
+import "react-native";
+import React from "react";
+import App from "../App";
+
+// Note: test renderer must be required after react-native.
+import renderer from "react-test-renderer";
+
+// it("renders correctly", () => {
+//   renderer.create(<App />);
+// });
+
+test("renders correctly", () => {
+  const tree = renderer.create(<App />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+```
+
+- If you run `jest` without updating the component, it passes. If you upadate it, it fails. Then you either fix the mistakes, or you run `jest -u` to update the snapshot, and it passes.

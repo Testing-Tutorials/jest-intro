@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1628227538054" clover="3.2.0">
+  <project timestamp="1628227538054" name="All files">
+    <metrics statements="26" coveredstatements="25" conditionals="4" coveredconditionals="4" methods="12" coveredmethods="11" elements="42" coveredelements="40" complexity="0" loc="26" ncloc="26" packages="1" files="4" classes="4"/>
+    <file name="anagram.js" path="/Users/footios/development/Testing/Jest/intro/anagram.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="7" count="6" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+    </file>
+    <file name="chunck.js" path="/Users/footios/development/Testing/Jest/intro/chunck.js">
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="10" type="stmt"/>
+      <line num="11" count="10" type="cond" truecount="4" falsecount="0"/>
+      <line num="12" count="5" type="stmt"/>
+      <line num="14" count="5" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+    </file>
+    <file name="functions.js" path="/Users/footios/development/Testing/Jest/intro/functions.js">
+      <metrics statements="12" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+    </file>
+    <file name="reverseString.js" path="/Users/footios/development/Testing/Jest/intro/reverseString.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

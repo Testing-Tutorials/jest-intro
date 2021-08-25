@@ -15,8 +15,6 @@ can be intimidating. It shouldn't be! This video guides you through all the basi
 - Master JavaScript: https://acad.link/js
 - Master ES6: https://acad.link/es6
 
-In order to follow the second part [JavaScript Testing - Mocking Async Code](https://www.youtube.com/watch?v=4Fl5GH4eYZ8&list=RDCMUCSJbGtTlrDami-tDGPUV9-w&index=2) you need to `git checkout async-code`
-
 ### 1. Benefits of automate testing:
 
 - Get an error if you break code.
@@ -38,7 +36,7 @@ In order to follow the second part [JavaScript Testing - Mocking Async Code](htt
 2. `Integration Tests`: With dependencies - not fully isolated (e.g. testing a function that calls a function).
 
 - Complexity: some.
-- Frequency: write thousands of these
+- Frequency: write some of these
 
 3. `End-to-End (E2E) or UI Tests`: Full Flow (e.g. validating the DOM after a click).
 
@@ -76,7 +74,7 @@ Note: To check [JavaScript Testing - Mocking Async Code](https://www.youtube.com
 Notes:
 
 1. To check part two, you need to `git checkout second-part`
-2. The code of part two is from the course from just the `Jest Crash Course - Unit Testing in JavaScript` course.
+2. The code of part two is just from the `Jest Crash Course - Unit Testing in JavaScript` course.
 
 ### [Jest Crash Course - Unit Testing in JavaScript](https://www.youtube.com/watch?v=7r4xVDI2vho) by Traversy Media
 
@@ -89,7 +87,7 @@ Notes:
 ```js
   "scripts": {
     "test": "jest  --verbose", // "test": "jest --coverage"
-    "testwatch": "jest --watchAll"
+    "testwatch": "jest --watchAll" // jest --watch
   },
 ```
 
@@ -99,11 +97,12 @@ Note: From the following tutorial, we don't have any code in the files, but only
 
 2. Test JavaScript with Jest.
 
-Convencions to follow for test files:
+- Convencions to follow for test files:
 
-- `fileName.test.js`
-- `fileName.spec.js`
-- Put all your test files in a folder with underscores, like `__folderName__`
+  - `fileName.test.js`
+  - `fileName.spec.js`
+  - Put all your test files in a folder with underscores, like `__folderName__`
+
 - You can run your tests even with `npm t`
 - Jest can simulate a browser enviroment. In order to avoid getting the `window` object, when running tests (because of the extra weight), we can configure the test enviroment for Jest in `package.json`. Just set the following:
   ```js
@@ -114,7 +113,7 @@ Convencions to follow for test files:
 
 4. Track project code coverage with Jest.
 
-- Specify the scripts in package.json to `"test": "jest --coverage"`. Then when we run `npm t`, we see a coverage report on the console. Plus we get a coverage folder in our project. There is an `index.js` file, which we can open, also through the cli by typing: `open coverage/Icov-report/index.html`. Or just got to file and open with right-click => `lite-server`. There you get a better overview...
+- Specify the scripts in `package.json` to `"test": "jest --coverage"`. Then when we run `npm t`, we see a coverage report on the console. Plus we get a coverage folder in our project. There is an `index.js` file, which we can open, also through the cli by typing: `open coverage/Icov-report/index.html`. Or just got to file and open with right-click => `lite-server`. There you get a better overview...
 - To add all the functions and files (you want to cover in your tests) automatically. Go to package.json and specify the glob `"src/*.js"`:
 
 ```js
@@ -125,9 +124,12 @@ Convencions to follow for test files:
 }
 ```
 
-Notes: 1. The test files are excluded! 2. Add the coverage folder in your `.gitignore` file.
+Notes:
 
-- We can configure jest with a coverage threshold. This means that if our code coverage ever passes below, that percentage, our testscript is going to fail. In this way, we encourage everybody to add tests as they add code. To do that add the threshold in the jest configuration. Note: the numbers below is the percentage.
+1. The test files are excluded!
+2. Add the coverage folder in your `.gitignore` file.
+
+- We can configure jest with a coverage threshold. This means that if our code coverage ever passes below, that percentage, our testscript is going to fail. In this way, we encourage everybody to add tests as they add code. To do that add the threshold in the jest configuration. Note: each number below represents a percentage.
 
 ```js
 "jest": {
@@ -143,7 +145,7 @@ Notes: 1. The test files are excluded! 2. Add the coverage folder in your `.giti
 ```
 
 - Use Jest's interactive Watch Mode.
-- Add in package.json, scripts the `--watch` flag like so: `"test": "jest --watch"`.
+- Add in `package.json`, scripts the `--watch` flag like so: `"test": "jest --watch"`.
 - To see just the last commit, add also the `--lastCommit` flag like so: `"test": "jest --watch --lastCommit"`
 - You may specify a unique command like so:
   - `"test:watch": "jest --watch"` or

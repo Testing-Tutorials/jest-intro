@@ -4,20 +4,49 @@ This repo has 2 parts and 3 branches
 
 ### [JavaScript Testing Introduction Tutorial - Unit Tests, Integration Tests & e2e Tests](https://www.youtube.com/watch?v=r9HdJ8P6GQI)
 
-JavaScript testing:
-
-- unit tests,
-- integration tests and
-- e2e (UI) tests
-
-can be intimidating. It shouldn't be! This video guides you through all the basics (including the "Why"?) of JavaScript testing. Master JavaScript testing now!
+Testing can be intimidating. It shouldn't be! This video guides you through all the basics (including the "Why"?) of JavaScript testing. Master JavaScript testing now!
 
 - Master JavaScript: https://acad.link/js
 - Master ES6: https://acad.link/es6
 
+Ofcourse you can check this Academind article too: [JavaScript Testing Introduction](https://academind.com/tutorials/javascript-testing-introduction)
+
+#### Why Test?
+
+- Get an error if you break code
+- Save time
+- Think about possible issues and bugs
+- Integrate into build workflow
+- Break up complex dependencies (split code and make it modulars)
+- Improve code
+
+#### Different Kinds of Tests
+
+- Unit tests (Fully isolated (e.g. testing one function))
+- Integration tests (With dependencies (e.g. a function that calls another function - but not calling backend))
+- End-to-End, E2E or UI tests (Full Flow (e.g. validating the DOM after a click))
+
+Complexity: Unit -> Integration -> E2E
+Frequency: the above reversed.
+
+#### Testing Setup
+
+- Test Runner (Executes your tests summarize results, e.g. Mocka, Jest)
+- Assertion Library (Define testing logic, conditions, e.g. Chai, Jest)
+- Headless Browser (Simulates browser interaction e.g. Puppeteer)
+
+#### Extra Notes
+
+- File names for running tests should end with `.spec.js` or `.test.js` and Jest will automatically detect them.
+- puppeteer is a headless version of chrome.
+
+===========================================================
+
+### Second Video Mocking Async Code.
+
 In order to follow the second part [JavaScript Testing - Mocking Async Code](https://www.youtube.com/watch?v=4Fl5GH4eYZ8&list=RDCMUCSJbGtTlrDami-tDGPUV9-w&index=2) you need to `git checkout async-code`
 
-### 1. Benefits of automate testing:
+#### 1. Benefits of automate testing:
 
 - Get an error if you break code.
 - Save time.

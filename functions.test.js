@@ -66,6 +66,8 @@ test("Admin should be in usernames", () => {
 
 // Promise
 // test("User fetched name should be Leanne Graham", () => {
+//   /* When you have no assertions and you don't return the function,
+//   it's going to pass no matter what the outcome */
 //   expect.assertions(1);
 //   return functions.fetchUser().then((data) => {
 //     expect(data.name).toEqual("Leanne Graham1");

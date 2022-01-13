@@ -1,4 +1,4 @@
-// jest.mock("./http");
+// jest.mock("./http"); // With this the mock fetchData runs!
 
 const { loadTitle } = require("./util");
 
